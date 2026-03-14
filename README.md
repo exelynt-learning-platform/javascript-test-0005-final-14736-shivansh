@@ -1,18 +1,20 @@
-# javascript-test-0005-final-14736-shivansh
-Final Project Assignment - This repository contains the complete final project code and documentation.
+# Number Triangle Pattern in JavaScript
 
-# Number Triangle Pattern (JavaScript)
+This project demonstrates how to generate a **Number Triangle Pattern** using JavaScript.
 
-## Overview
+The program prints numbers in a triangular structure where each row contains **sequential numbers**, continuing from the previous row.
 
-This JavaScript program prints a **triangle of sequential numbers**.
-The numbers start from **1** and continue increasing row by row.
+This is a common **logic-building problem used in coding assessments and technical interviews**.
 
-Each row contains a number of elements equal to the **row number**.
+---
 
-Example output for `rows = 5`:
+## 📌 Problem Statement
 
-```id="7x2d1k"
+Write a program that prints a **Number Triangle Pattern** for a given number of rows.
+
+Example when `rows = 5`:
+
+```text
 1
 2 3
 4 5 6
@@ -20,125 +22,111 @@ Example output for `rows = 5`:
 11 12 13 14 15
 ```
 
-This pattern is commonly known as **Floyd’s Triangle** and is used to practice **loops and pattern logic** in programming.
+---
+
+## 🧠 Logic Used
+
+1. The triangle consists of **N rows**.
+2. Each row prints numbers equal to the **row number**.
+3. A variable `currentNumber` keeps track of the **next number to print**.
+4. After printing a number, the value is incremented.
+5. The sequence continues until all rows are printed.
+
+Formula concept:
+
+* Row 1 → 1 number
+* Row 2 → 2 numbers
+* Row 3 → 3 numbers
+* Row N → N numbers
 
 ---
 
-## How the Program Works
+## 💻 Implementation
 
-### 1. Define Number of Rows
+```javascript
+/**
+ * Prints a sequential number triangle pattern
+ * @param {number} rows - Number of rows in the triangle
+ */
 
-```javascript id="y9p8v2"
-let rows = 5;
-```
-
-This variable determines how many rows will be printed.
-
----
-
-### 2. Initialize Starting Number
-
-```javascript id="h5n1r7"
-let num = 1;
-```
-
-The variable `num` keeps track of the **current number to print**.
-
----
-
-### 3. Outer Loop (Rows)
-
-```javascript id="m6g4c1"
-for (let i = 1; i <= rows; i++)
-```
-
-This loop controls the **rows of the triangle**.
-
----
-
-### 4. Inner Loop (Numbers in Each Row)
-
-```javascript id="b3s9t0"
-for (let j = 1; j <= i; j++)
-```
-
-Each row prints `i` numbers.
-
-For example:
-
-| Row | Numbers Printed |
-| --- | --------------- |
-| 1   | 1               |
-| 2   | 2 3             |
-| 3   | 4 5 6           |
-
----
-
-### 5. Increment the Number
-
-```javascript id="d8k5q3"
-num++;
-```
-
-After printing each number, the value increases by **1**.
-
----
-
-### 6. Print the Row
-
-```javascript id="u2w4z8"
-console.log(row.trim());
-```
-
-`trim()` removes the extra space at the end of the row.
-
----
-
-## Code
-
-```javascript id="c0q2l9"
-// Number Triangle Pattern
-
-let rows = 5;
-let num = 1;
-
-for (let i = 1; i <= rows; i++) {
-
-  let row = "";
-
-  for (let j = 1; j <= i; j++) {
-    row += num + " ";
-    num++;
+function printNumberTriangle(rows) {
+  if (!Number.isInteger(rows) || rows < 1) {
+    console.error("Invalid input: rows must be a positive integer.");
+    return;
   }
 
-  console.log(row.trim());
+  let currentNumber = 1;
+
+  for (let row = 1; row <= rows; row++) {
+    let line = "";
+
+    for (let col = 1; col <= row; col++) {
+      line += currentNumber + " ";
+      currentNumber++;
+    }
+
+    console.log(line.trim());
+  }
 }
+
+// Example usage
+printNumberTriangle(5);
 ```
 
 ---
 
-## How to Run the Program
+## ⚙️ How to Run
 
-1. Install **Node.js**
-2. Save the file as `numberTriangle.js`
-3. Open the terminal in the project folder
-4. Run the command:
+1. Install **Node.js** on your system.
+2. Save the code in a file called:
 
-```id="r4z8m1"
+```text
+numberTriangle.js
+```
+
+3. Run the program using:
+
+```bash
 node numberTriangle.js
 ```
 
 ---
 
-## Concepts Used
+## 📂 Project Structure
 
-* Nested loops
-* Pattern printing
-* Incrementing numbers
-* JavaScript console output
+```text
+number-triangle-pattern
+│
+├── numberTriangle.js
+└── README.md
+```
 
 ---
 
-## Author
+## 🚀 Features
 
-Created as a practice program to understand **loop structures and pattern printing in JavaScript**.
+* Clean and readable JavaScript implementation
+* Input validation for safe execution
+* Reusable function design
+* Simple and efficient pattern logic
+
+---
+
+## 📚 Concepts Covered
+
+* JavaScript Loops
+* Nested Loops
+* Pattern Printing Algorithms
+* Sequential Number Logic
+
+---
+
+## 👨‍💻 Author
+
+**Shivansh Dubey**
+
+B.Tech CSE
+
+
+Technologies:
+Java • JavaScript • React • MySQL
