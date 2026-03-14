@@ -1,16 +1,27 @@
-// Number Triangle Pattern
+/**
+ * Prints a sequential number triangle pattern
+ * @param {number} rows - Number of rows in the triangle
+ */
 
-let rows = 5;
-let num = 1;
-
-for (let i = 1; i <= rows; i++) {
-
-  let row = "";
-
-  for (let j = 1; j <= i; j++) {
-    row += num + " ";
-    num++;
+function printNumberTriangle(rows) {
+  if (!Number.isInteger(rows) || rows < 1) {
+    console.error("Invalid input: rows must be a positive integer.");
+    return;
   }
 
-  console.log(row.trim());
+  let currentNumber = 1;
+
+  for (let row = 1; row <= rows; row++) {
+    let line = "";
+
+    for (let col = 1; col <= row; col++) {
+      line += currentNumber + " ";
+      currentNumber++;
+    }
+
+    console.log(line.trim());
+  }
 }
+
+// Example usage
+printNumberTriangle(5);
